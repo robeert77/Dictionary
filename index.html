@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+        <script type="text/javascript" src="scripts.js"></script>
+        <title>Dictionary</title>
+    </head>
+    <body>
+        <div class="container my-5">
+            <div class="row justify-content-between">
+                <div class="col-4 mt-3">
+                    <label class="form-label">Add a new word:</label>
+                    <input type="text" id="newWord" class="form-control">
+                </div>
+                <div class="col-2 mt-5">
+                    <button type="button" class="btn btn-info px-4 rounded-pill" onclick="addWord()">Add</button>
+                </div>
+                <div class="col-4 mt-3">
+                    <label class="form-label">Search a word:</label>
+                    <input type="text" id="searchedWord" class="form-control">
+                </div>
+                <div class="col-2 mt-5">
+                    <button type="submit" class="btn btn-info px-4 rounded-pill" onclick="checkWord()">Search</button>
+                </div>
+            </div>
+            <button type="button" class="btn btn-info px-4 mt-5 rounded-pill" onclick="showDictionary()">Show dictionary</button>
+            <ul class="m-4 list-group" id="dictionaryList">
+            </ul>
+
+            <!-- This is the modal for an existing word -->
+            <div class="modal fade" id="exist" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Infomation</h5>
+                        </div>
+                        <div class="modal-body py-3">
+                            This words exist in your dictionary!
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary px-4 rounded-pill" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- This is the modal for invalid input -->
+            <div class="modal fade" id="invalidInput" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Uups!</h5>
+                        </div>
+                        <div class="modal-body py-3">
+                            You did not introduced a word. Please try again!
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary px-4 rounded-pill" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- This is the modal for non-existing words -->
+            <div class="modal fade" id="non-existing" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Sorry!</h5>
+                        </div>
+                        <div class="modal-body py-3">
+                            This word does not exist in your dictionary. Please add it first!
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary px-4 rounded-pill" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    </body>
+</html>
